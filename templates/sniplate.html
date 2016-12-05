@@ -1,0 +1,8 @@
+{% load sniplates %}
+
+{% block list %}<ol>{% for node in nodes %}{% reuse "listitem" %}{% endfor %}</ol>{% endblock list %}
+
+{% block listitem %}<li>
+{{ node.title }}
+{% if node.children %}{{ node.children|length }} children ... {% reuse "list" nodes=node.children %}{% endif %}
+</li>{% endblock listitem %}

@@ -1,0 +1,5 @@
+<li>{{ node.title }}
+{% if node.children %}
+{{ node.children|length }} children ... {% include 'include_root.html' with nodes=node.children %}
+{% endif %}
+</li>
